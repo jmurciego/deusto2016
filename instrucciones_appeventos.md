@@ -117,7 +117,7 @@ El parámetro de contexto `contextConfigLocation` sirve para indicar una ruta al
 
 ##Paso 5: Creación del fichero application-context.xml de configuración de Spring 
 
-Crear el fichero `application-context.xml` en la ruta `src/main/webapp/WEB-INF/application-context.xml`
+Crear el fichero `application-context.xml` en la ruta `src/main/webapp/WEB-INF/spring/application-context.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
