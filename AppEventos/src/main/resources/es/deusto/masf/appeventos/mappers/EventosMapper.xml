@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="es.deusto.masf.appeventos.mappers.EventosMapper">
+
+    <resultMap id="EventoMap" type="es.deusto.masf.appeventos.domain.Evento">
+        <id column="ID_EVENTO" jdbcType="NUMERIC" property="idEvento" />
+        <result column="NOMBRE_EVENTO" jdbcType="VARCHAR" property="nombreEvento" />
+        <result column="DESCRIPCION_EVENTO" jdbcType="VARCHAR" property="descripcionEvento" />
+        <result column="TIPO" jdbcType="VARCHAR" property="tipo" />
+        <result column="FECHA" jdbcType="DATE" property="fecha" />
+    </resultMap>
+    
+  
+    <select id="getListadoEventosByTipo" parameterType="java.lang.String" resultMap="EventoMap">
+        SELECT ID_EVENTO, NOMBRE_EVENTO, DESCRIPCION_EVENTO, TIPO, FECHA  
+        FROM EVENTOS
+        WHERE TIPO = #{value}
+    </select>
+
+</mapper>
